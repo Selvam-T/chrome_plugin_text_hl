@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Chrome Plugin Highlighter",
+    "version": "1.0",
+    "description": "A Chrome extension to highlight text on web pages.",
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
