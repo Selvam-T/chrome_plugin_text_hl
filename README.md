@@ -5,7 +5,8 @@
 - **Features**:
     - Add highlight to selected text.  
     - Save highlights persistently.  
-    - View saved highlights in popup.    
+    - View saved highlights in popup. 
+    - Clear saved highlights in popup.   
 
 ## Step-by-Step Development Process
 ### 1. Plan and Setup
