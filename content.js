@@ -1,3 +1,5 @@
+console.log("Content script loaded!");
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "highlight") {
     const selection = window.getSelection();
@@ -14,7 +16,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         highlights.push({
           text: message.text,
           url: window.location.href,
-          timestamp: new Date().toISOString()
+          id: highlights.length + 1
         });
         chrome.storage.local.set({ highlights });
       });

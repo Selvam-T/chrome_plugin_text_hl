@@ -4,8 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("highlightList");
     highlights.forEach((highlight) => {
       const li = document.createElement("li");
-      li.textContent = `${highlight.text} (${new Date(highlight.timestamp).toLocaleString()})`;
+      li.textContent = `${highlight.id}. ${highlight.text}`;
       list.appendChild(li);
     });
+  });
+});
+
+document.getElementById("clear").addEventListener("click", () => {
+  chrome.storage.local.set({ highlights: [] }, () => {
+    const list = document.getElementById("highlightList");
+    list.innerHTML = "";
   });
 });
